@@ -735,17 +735,27 @@ angular.module('ui.grid')
   };
 
   GridRenderContainer.prototype.needsHScrollbarPlaceholder = function () {
-    var self = this,
-      containerBody;
+    var bodyRenderContainerWidth = 0,
+        leftRenderContainerWidth = 0,
+        rightRenderContainerWidth = 0;
 
-    if (self.name === 'left' || self.name === 'right' && !this.hasHScrollbar && !this.grid.disableScrolling) {
-      if (self.grid.options.enableHorizontalScrollbar === uiGridConstants.scrollbars.ALWAYS) {
-        return true;
-      }
-      containerBody = this.grid.element[0].querySelector('.ui-grid-render-container-body .ui-grid-viewport');
-      return containerBody.scrollWidth > containerBody.offsetWidth;
+    if (this.grid.renderContainers.body) {
+      bodyRenderContainerWidth = this.grid.renderContainers.body.canvasWidth;
     }
-    return false;
+
+    if (this.grid.renderContainers.left) {
+      leftRenderContainerWidth = this.grid.renderContainers.left.canvasWidth;
+    }
+
+    if (this.grid.renderContainers.right) {
+      rightRenderContainerWidth = this.grid.renderContainers.right.canvasWidth
+    }
+
+    var fullGridWidth = bodyRenderContainerWidth + leftRenderContainerWidth + rightRenderContainerWidth;
+    return this.grid.options.enableHorizontalScrollbar &&
+          !this.hasHScrollbar &&
+          !this.grid.disableScrolling &&
+          (fullGridWidth > this.grid.gridWidth);
   };
 
   GridRenderContainer.prototype.getViewportStyle = function () {

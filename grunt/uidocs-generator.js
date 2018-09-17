@@ -22,15 +22,15 @@ module.exports = {
       '//ajax.googleapis.com/ajax/libs/angularjs/<%= latestAngular %>/angular-touch.js',
       '//ajax.googleapis.com/ajax/libs/angularjs/<%= latestAngular %>/angular-animate.js',
       '//ajax.googleapis.com/ajax/libs/angularjs/<%= latestAngular %>/angular-aria.js',
-      'bower_components/csv-js/csv.js',
-      'bower_components/pdfmake/build/pdfmake.js',
-      'bower_components/pdfmake/build/vfs_fonts.js',
-      'bower_components/lodash/dist/lodash.min.js',
-      'bower_components/jszip/dist/jszip.min.js',
-      'bower_components/excel-builder-js/dist/excel-builder.dist.js'
+      'app/bower_components/csv-js/csv.js',
+      'app/bower_components/pdfmake/build/pdfmake.js',
+      'app/bower_components/pdfmake/build/vfs_fonts.js',
+      'app/bower_components/lodash/dist/lodash.min.js',
+      'app/bower_components/jszip/dist/jszip.min.js',
+      'app/bower_components/excel-builder-js/dist/excel-builder.dist.js'
     ],
     hiddenScripts: [
-      'bower_components/google-code-prettify/src/prettify.js',
+      'app/bower_components/google-code-prettify/src/prettify.js',
       'node_modules/marked/lib/marked.js'
     ],
     httpScripts: [

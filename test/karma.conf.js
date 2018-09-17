@@ -18,10 +18,10 @@ module.exports = function(config) {
     // the karmangular task doesn't appear to run.  So includes the features/**/test, but
     // they don't get run if you've used the --fast or --core options
     files: [
-      'bower_components/jquery/jquery.min.js',
+      'app/bower_components/jquery/jquery.min.js',
       'lib/test/jquery.simulate.js',
       'lib/test/classList.polyFill.js',
-      'bower_components/lodash/dist/lodash.min.js',
+      'app/bower_components/lodash/dist/lodash.min.js',
 
       'src/js/core/bootstrap.js',
       'src/js/**/*.js',
